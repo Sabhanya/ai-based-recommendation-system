@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#15803D" />
+  <circle cx="32" cy="32" r="26" fill="#166534" opacity="0.4" />
+  <!-- Sprout Stem -->
+  <path d="M32 48V26" stroke="#FEF08A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Leaf Left -->
+  <path d="M32 38C22 38 18 30 18 20C28 20 32 28 32 38Z" fill="#4ADE80" stroke="#DCFCE7" stroke-width="1.5"/>
+  <!-- Leaf Right -->
+  <path d="M32 32C42 32 46 24 46 14C36 14 32 22 32 32Z" fill="#86EFAC" stroke="#DCFCE7" stroke-width="1.5"/>
+  <!-- Soil Base -->
+  <path d="M16 48C20 45 44 45 48 48" stroke="#FDE68A" stroke-width="3" stroke-linecap="round"/>
+  <!-- AI Sparkle -->
+  <path d="M48 18L49.5 22L53.5 23.5L49.5 25L48 29L46.5 25L42.5 23.5L46.5 22L48 18Z" fill="#FACC15"/>
+</svg>

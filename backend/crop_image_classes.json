@@ -1,0 +1,295 @@
+{
+  "classes_count": 48,
+  "class_names": [
+    "amaranthus",
+    "apple",
+    "arecanut",
+    "banana",
+    "blackgram",
+    "brinjal",
+    "cabbage",
+    "carrot",
+    "cashew",
+    "cauliflower",
+    "chickpea",
+    "chilli",
+    "coconut",
+    "coffee",
+    "coriander",
+    "cotton",
+    "fenugreek",
+    "grapes",
+    "groundnut",
+    "guava",
+    "jasmine",
+    "jute",
+    "kidneybeans",
+    "lentil",
+    "maize",
+    "mango",
+    "millet",
+    "mint",
+    "mothbeans",
+    "mungbean",
+    "muskmelon",
+    "okra",
+    "onion",
+    "orange",
+    "papaya",
+    "pigeonpeas",
+    "pomegranate",
+    "potato",
+    "radish",
+    "rice",
+    "sorghum",
+    "spinach",
+    "sugarcane",
+    "tea",
+    "tobacco",
+    "tomato",
+    "watermelon",
+    "wheat"
+  ],
+  "classes_metadata": {
+    "amaranthus": {
+      "name": "Amaranthus",
+      "nameTe": "Amaranthus",
+      "category": "Agricultural Plant"
+    },
+    "apple": {
+      "name": "Apple",
+      "nameTe": "యాపిల్",
+      "category": "Fruits & Orchards"
+    },
+    "arecanut": {
+      "name": "Arecanut",
+      "nameTe": "Arecanut",
+      "category": "Agricultural Plant"
+    },
+    "banana": {
+      "name": "Banana",
+      "nameTe": "అరటి",
+      "category": "Fruits & Orchards"
+    },
+    "blackgram": {
+      "name": "Blackgram",
+      "nameTe": "Blackgram",
+      "category": "Agricultural Plant"
+    },
+    "brinjal": {
+      "name": "Brinjal (Eggplant)",
+      "nameTe": "వంకాయ",
+      "category": "Vegetables"
+    },
+    "cabbage": {
+      "name": "Cabbage",
+      "nameTe": "Cabbage",
+      "category": "Agricultural Plant"
+    },
+    "carrot": {
+      "name": "Carrot",
+      "nameTe": "Carrot",
+      "category": "Agricultural Plant"
+    },
+    "cashew": {
+      "name": "Cashew",
+      "nameTe": "Cashew",
+      "category": "Agricultural Plant"
+    },
+    "cauliflower": {
+      "name": "Cauliflower",
+      "nameTe": "Cauliflower",
+      "category": "Agricultural Plant"
+    },
+    "chickpea": {
+      "name": "Chickpea",
+      "nameTe": "Chickpea",
+      "category": "Agricultural Plant"
+    },
+    "chilli": {
+      "name": "Chilli",
+      "nameTe": "పచ్చిమిర్చి",
+      "category": "Vegetables"
+    },
+    "coconut": {
+      "name": "Coconut",
+      "nameTe": "కొబ్బరి",
+      "category": "Plantation Crops"
+    },
+    "coffee": {
+      "name": "Coffee",
+      "nameTe": "కాఫీ",
+      "category": "Plantation Crops"
+    },
+    "coriander": {
+      "name": "Coriander",
+      "nameTe": "Coriander",
+      "category": "Agricultural Plant"
+    },
+    "cotton": {
+      "name": "Cotton",
+      "nameTe": "పత్తి",
+      "category": "Cash Crops"
+    },
+    "fenugreek": {
+      "name": "Fenugreek",
+      "nameTe": "Fenugreek",
+      "category": "Agricultural Plant"
+    },
+    "grapes": {
+      "name": "Grapes",
+      "nameTe": "ద్రాక్ష",
+      "category": "Fruits & Orchards"
+    },
+    "groundnut": {
+      "name": "Groundnut (Peanut)",
+      "nameTe": "వేరుశనగ",
+      "category": "Cash Crops"
+    },
+    "guava": {
+      "name": "Guava",
+      "nameTe": "జామ",
+      "category": "Fruits & Orchards"
+    },
+    "jasmine": {
+      "name": "Jasmine",
+      "nameTe": "మల్లెపువ్వు (మల్లె)",
+      "category": "Flowering Crops"
+    },
+    "jute": {
+      "name": "Jute",
+      "nameTe": "Jute",
+      "category": "Agricultural Plant"
+    },
+    "kidneybeans": {
+      "name": "Kidneybeans",
+      "nameTe": "Kidneybeans",
+      "category": "Agricultural Plant"
+    },
+    "lentil": {
+      "name": "Lentil",
+      "nameTe": "Lentil",
+      "category": "Agricultural Plant"
+    },
+    "maize": {
+      "name": "Maize (Corn)",
+      "nameTe": "మొక్కజొన్న",
+      "category": "Cereals"
+    },
+    "mango": {
+      "name": "Mango",
+      "nameTe": "మామిడి",
+      "category": "Fruits & Orchards"
+    },
+    "millet": {
+      "name": "Millet",
+      "nameTe": "Millet",
+      "category": "Agricultural Plant"
+    },
+    "mint": {
+      "name": "Mint",
+      "nameTe": "Mint",
+      "category": "Agricultural Plant"
+    },
+    "mothbeans": {
+      "name": "Mothbeans",
+      "nameTe": "Mothbeans",
+      "category": "Agricultural Plant"
+    },
+    "mungbean": {
+      "name": "Mungbean",
+      "nameTe": "Mungbean",
+      "category": "Agricultural Plant"
+    },
+    "muskmelon": {
+      "name": "Muskmelon",
+      "nameTe": "Muskmelon",
+      "category": "Agricultural Plant"
+    },
+    "okra": {
+      "name": "Okra (Lady's Finger)",
+      "nameTe": "బెండకాయ",
+      "category": "Vegetables"
+    },
+    "onion": {
+      "name": "Onion",
+      "nameTe": "ఉల్లిపాయ",
+      "category": "Vegetables"
+    },
+    "orange": {
+      "name": "Orange",
+      "nameTe": "నారింజ",
+      "category": "Fruits & Orchards"
+    },
+    "papaya": {
+      "name": "Papaya",
+      "nameTe": "బొప్పాయి",
+      "category": "Fruits & Orchards"
+    },
+    "pigeonpeas": {
+      "name": "Pigeonpeas",
+      "nameTe": "Pigeonpeas",
+      "category": "Agricultural Plant"
+    },
+    "pomegranate": {
+      "name": "Pomegranate",
+      "nameTe": "దానిమ్మ",
+      "category": "Fruits & Orchards"
+    },
+    "potato": {
+      "name": "Potato",
+      "nameTe": "బంగాళాదుంప (ఆలుగడ్డ)",
+      "category": "Vegetables"
+    },
+    "radish": {
+      "name": "Radish",
+      "nameTe": "Radish",
+      "category": "Agricultural Plant"
+    },
+    "rice": {
+      "name": "Rice (Paddy)",
+      "nameTe": "వరి",
+      "category": "Cereals"
+    },
+    "sorghum": {
+      "name": "Sorghum",
+      "nameTe": "Sorghum",
+      "category": "Agricultural Plant"
+    },
+    "spinach": {
+      "name": "Spinach",
+      "nameTe": "Spinach",
+      "category": "Agricultural Plant"
+    },
+    "sugarcane": {
+      "name": "Sugarcane",
+      "nameTe": "చెరకు",
+      "category": "Cash Crops"
+    },
+    "tea": {
+      "name": "Tea",
+      "nameTe": "Tea",
+      "category": "Agricultural Plant"
+    },
+    "tobacco": {
+      "name": "Tobacco",
+      "nameTe": "Tobacco",
+      "category": "Agricultural Plant"
+    },
+    "tomato": {
+      "name": "Tomato",
+      "nameTe": "టమాట",
+      "category": "Vegetables"
+    },
+    "watermelon": {
+      "name": "Watermelon",
+      "nameTe": "పుచ్చకాయ",
+      "category": "Fruits & Orchards"
+    },
+    "wheat": {
+      "name": "Wheat",
+      "nameTe": "గోధుమ",
+      "category": "Cereals"
+    }
+  }
+}
