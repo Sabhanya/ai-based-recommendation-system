@@ -13,30 +13,30 @@ import {
   ChevronUp
 } from 'lucide-react';
 
-// Exact Local Image Mapping to your public folder files
+// Exact Local Image Mapping to your files
 const LOCAL_CROP_IMAGES = {
-  groundnut: "/c21.jpg",   // Groundnut produce
-  chickpea: "/c22.jpg",    // Chickpea produce
-  tomato: "/c6.jpeg",      // Tomato
-  cotton: "/c10.jpeg",     // Cotton
-  rice: "/c14.jpeg",       // Rice / Paddy
-  watermelon: "/c15.jpeg", // Watermelon
-  wheat: "/c18.png",       // Wheat
-  brinjal: "/c13.jpeg",    // Brinjal / Eggplant
-  cabbage: "/c11.jpeg",    // Cabbage
-  pomegranate: "/c7.jpeg", // Pomegranate
-  pineapple: "/c16.jpeg",  // Pineapple
-  potato: "/c8.jpeg",      // Potato
-  orange: "/c4.jpeg",      // Orange / Citrus
-  papaya: "/c5.jpeg",      // Papaya
-  coconut: "/c9.jpeg",     // Coconut
-  grapes: "/c19.jpeg",     // Grapes
-  coffee: "/c20.jpeg",     // Coffee
-  maize: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=400&q=80",
-  sugarcane: "https://images.unsplash.com/photo-1596706915220-410a8d62635a?auto=format&fit=crop&w=400&q=80",
-  banana: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80"
+  maize: "/c1.jpeg",
+  cotton: "/c10.jpeg",
+  tomato: "/c6.jpeg",
+  orange: "/c4.jpeg",
+  papaya: "/c5.jpeg",
+  pomegranate: "/c7.jpeg",
+  potato: "/c8.jpeg",
+  coconut: "/c9.jpeg",
+  cabbage: "/c11.jpeg",
+  sugarcane: "/c12.jpeg",
+  brinjal: "/c13.jpeg",
+  rice: "/c14.jpeg",
+  watermelon: "/c15.jpeg",
+  pineapple: "/c16.jpeg",
+  wheat: "/c18.png",
+  grapes: "/c19.jpeg",
+  coffee: "/c20.jpeg",
+  groundnut: "/c21.jpg",
+  chickpea: "/c22.jpg",
+  banana: "/c23.jpg",
+  apple: "/c3.jpeg"
 };
-
 export const TopRecommendations = ({ recommendations = [], inputs = {}, onReset }) => {
   const langContext = useLanguage ? useLanguage() : { isTelugu: false };
   const isTelugu = langContext?.isTelugu || false;
@@ -64,7 +64,7 @@ export const TopRecommendations = ({ recommendations = [], inputs = {}, onReset 
         return path;
       }
     }
-    return "/c3.jpeg"; // Default safe produce image
+    return "/c3.jpeg"; 
   };
 
   const toggleVoice = () => {
@@ -208,7 +208,14 @@ export const TopRecommendations = ({ recommendations = [], inputs = {}, onReset 
                       className="w-full h-full object-cover transform hover:scale-105 transition-all duration-300"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = "/c3.jpeg"; // Fallback to local tomato
+                        // Try fallback to .jpg if .jpeg fails
+                        if (e.target.src.endsWith('.jpeg')) {
+                          e.target.src = e.target.src.replace('.jpeg', '.jpg');
+                        } else if (e.target.src.endsWith('.jpg')) {
+                          e.target.src = e.target.src.replace('.jpg', '.png');
+                        } else {
+                          e.target.src = "/c14.jpeg"; // Fallback to safe crop image
+                        }
                       }}
                     />
                   </div>
