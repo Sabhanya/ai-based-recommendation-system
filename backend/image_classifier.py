@@ -1,32 +1,45 @@
 import io
 import json
 import re
+import os
 from PIL import Image
 import google.generativeai as genai
 from fastapi import HTTPException
+from dotenv import load_dotenv
 
-# Your active Google Gemini API Keys
-API_KEYS = [
-    "AQ.Ab8RN6L9FkubY0-JAeeKVmCdXukCEBQ3obRF2RFH7XlwXzuMuQ",
-    "AQ.Ab8RN6Ktc7b5NeHJWJa4qISSjKJ7ACGlp1wO0oF3CvA0Z9sgAg",
-    "AQ.Ab8RN6JuSVG5RdtnO5pct-X32h6e1xo0m_mBF2_V-IbbXh6vng",
-    "AQ.Ab8RN6IVFq4KJSo3toSxO4hU7JPw05KzkyFsvlxBCMKAOjNILQ"
-]
+# .env file lo unna keys ni load chesthundhi
+load_dotenv()
+
+# .env nunchi keys theeskuni list ga marusthundhi
+raw_keys = os.getenv("GEMINI_API_KEYS", "")
+API_KEYS = [k.strip() for k in raw_keys.split(",") if k.strip()]
+
+if not API_KEYS:
+    print("[WARNING]: GEMINI_API_KEYS .env file lo kanipinchaledhu!")
 
 CURRENT_KEY_INDEX = 0
 
 def configure_key(index: int):
     global CURRENT_KEY_INDEX
+    if not API_KEYS:
+        return
     CURRENT_KEY_INDEX = index % len(API_KEYS)
     active_key = API_KEYS[CURRENT_KEY_INDEX]
     genai.configure(api_key=active_key)
     print(f"[API ROTATION]: Active Key #{CURRENT_KEY_INDEX + 1}")
 
-configure_key(0)
+if API_KEYS:
+    configure_key(0)
 
 class ResilientGeminiVisionClassifier:
     def classify_image_bytes(self, image_bytes: bytes, filename: str = ""):
         global CURRENT_KEY_INDEX
+        if not API_KEYS:
+            raise HTTPException(
+                status_code=500,
+                detail="AI API keys levu. Dayachesi .env file ni check cheyandi."
+            )
+
         try:
             pil_image = Image.open(io.BytesIO(image_bytes))
             if pil_image.mode != "RGB":
@@ -70,13 +83,12 @@ class ResilientGeminiVisionClassifier:
         total_keys = len(API_KEYS)
         last_error = ""
 
-        # Using gemini-3.6-flash as requested by Google's API service
         for attempt in range(total_keys):
             try:
-                model = genai.GenerativeModel("gemini-3.6-flash")
+                model = genai.GenerativeModel("gemini-1.5-flash")
                 response = model.generate_content([prompt, pil_image])
                 raw_text = response.text.strip()
-                print(f"\n[GEMINI 3.6 FLASH SUCCESS]: {raw_text}\n")
+                print(f"\n[GEMINI SUCCESS]: {raw_text}\n")
 
                 match = re.search(r"\{.*\}", raw_text, re.DOTALL)
                 clean_json = match.group(0) if match else raw_text
@@ -97,7 +109,7 @@ class ResilientGeminiVisionClassifier:
                 err_msg = str(e)
                 last_error = err_msg
                 print(f"[KEY #{CURRENT_KEY_INDEX + 1} ERROR]: {err_msg}")
-                # Switch to the next key in the pool
+                # Kotha key ki rotate chesthundhi
                 next_index = (CURRENT_KEY_INDEX + 1) % total_keys
                 configure_key(next_index)
 
