@@ -7,10 +7,8 @@ import google.generativeai as genai
 from fastapi import HTTPException
 from dotenv import load_dotenv
 
-# .env file lo unna keys ni load chesthundhi
 load_dotenv()
 
-# .env nunchi keys theeskuni list ga marusthundhi
 raw_keys = os.getenv("GEMINI_API_KEYS", "")
 API_KEYS = [k.strip() for k in raw_keys.split(",") if k.strip()]
 
@@ -85,10 +83,11 @@ class ResilientGeminiVisionClassifier:
 
         for attempt in range(total_keys):
             try:
-                model = genai.GenerativeModel("gemini-1.5-flash")
+                # Google recommended active model
+                model = genai.GenerativeModel("gemini-3.8-flash")
                 response = model.generate_content([prompt, pil_image])
                 raw_text = response.text.strip()
-                print(f"\n[GEMINI SUCCESS]: {raw_text}\n")
+                print(f"\n[GEMINI 3.8 FLASH SUCCESS]: {raw_text}\n")
 
                 match = re.search(r"\{.*\}", raw_text, re.DOTALL)
                 clean_json = match.group(0) if match else raw_text
@@ -109,7 +108,6 @@ class ResilientGeminiVisionClassifier:
                 err_msg = str(e)
                 last_error = err_msg
                 print(f"[KEY #{CURRENT_KEY_INDEX + 1} ERROR]: {err_msg}")
-                # Kotha key ki rotate chesthundhi
                 next_index = (CURRENT_KEY_INDEX + 1) % total_keys
                 configure_key(next_index)
 
